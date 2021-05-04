@@ -1,2 +1,2 @@
 # restoreHistoryDemo
-A demo project for restore history with WKWebView
+A demo project to restore the history of WKWebView.
