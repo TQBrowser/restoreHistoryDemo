@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="referrer" content="never">
+</head>
+<body>
+<script>
+  (function () {
+      const pageUrl = location.href;
+      var index = pageUrl.search("params");
+      
+      var sessionRestoreComponents = JSON.parse(unescape(pageUrl.substring(index + "params=".length)));
+      
+      var urlList = sessionRestoreComponents['urls'];
+      var currentPage = sessionRestoreComponents['currentPage'];
+
+      history.replaceState({}, "", 'http://localhost:5555/history?url=' + urlList[0]);
+      
+      for (var i = 1; i < urlList.length; i++) {
+          history.pushState({}, '', 'http://localhost:5555/history?url=' + urlList[i]);
+      }
+      
+      if (currentPage !== 0) {
+          history.go(currentPage);
+      }
+
+      setTimeout(() => {
+          location.reload();
+      });
+
+      setTimeout(function () {
+          webkit.messageHandlers.sessionRestoreHelper.postMessage({ name: "didRestoreSession" });
+      }, 0);
+  }) ();
+</script>
+</body>
+</html>
