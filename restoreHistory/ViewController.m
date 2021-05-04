@@ -21,6 +21,10 @@
 
 @property (nonatomic, strong) WKUserContentController* userContentController;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *goBackButtonItem;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *goForwardButtonItem;
+
 @end
 
 @implementation ViewController
@@ -46,11 +50,12 @@
         [_webView.bottomAnchor constraintEqualToAnchor:_wkContainer.bottomAnchor],
     ]];
     
+    [_webView addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:nil];
+    [_webView addObserver:self forKeyPath:@"canGoForward" options:NSKeyValueObservingOptionNew context:nil];
     
     
-    
-    NSArray *urls = @[@"https://xw.qq.com", @"https://m.hupu.com", @"https://www.taobao.com", @"https://www.youtube.com", @"https://www.baidu.com"];
-    NSDictionary *params = @{@"urls": urls, @"currentPage": @(0)};
+    NSArray *urls = @[@"https://xw.qq.com", @"https://m.hupu.com", @"https://www.taobao.com", @"https://www.bilibili.com/", @"https://www.baidu.com", @"https://www.github.com"];
+    NSDictionary *params = @{@"urls": urls, @"currentPage": @(-1)};
     
     NSString *paramsStr = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:params options:0 error:nil] encoding:NSUTF8StringEncoding];
     NSURLComponents *urlComponents = [[NSURLComponents alloc] init];
@@ -97,19 +102,12 @@
     }];
     
     
-    //设置监听端口
     [_localServer startWithPort:5555 bonjourName:@"bonjourNNN"];
     NSLog(@"Visit %@ in your web browser", _localServer.serverURL);
 }
 
 - (void)webServerDidStart:(GCDWebServer *)server{
-    NSLog(@"本地服务启动成功");
-}
-
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
-{
-    NSLog(@"Alert: %@", message);
-    completionHandler();
+    NSLog(@"web server did start");
 }
 
 - (IBAction)buttonAction:(id)sender {
@@ -127,7 +125,17 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     NSDictionary *params = message.body;
     if ([params[@"name"] isEqualToString:@"didRestoreSession"]) {
-//        [_webView reload];
+        // Do something after restored session.
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqual:@"canGoBack"]) {
+        _goBackButtonItem.enabled = _webView.canGoBack;
+    }
+
+    if ([keyPath isEqual:@"canGoForward"]) {
+        _goForwardButtonItem.enabled = _webView.canGoForward;
     }
 }
 

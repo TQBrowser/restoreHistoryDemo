@@ -23,13 +23,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVa-10-j6A">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="&lt;" id="vIY-M7-cgh">
+                                    <barButtonItem enabled="NO" title="&lt;" id="vIY-M7-cgh">
                                         <connections>
                                             <action selector="goBack:" destination="BYZ-38-t0r" id="fzS-O5-Pl7"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem springLoaded="YES" systemItem="flexibleSpace" id="r8y-EK-7oE"/>
-                                    <barButtonItem title="&gt;" id="AN2-PI-tNf">
+                                    <barButtonItem enabled="NO" title="&gt;" id="AN2-PI-tNf">
                                         <connections>
                                             <action selector="goForward:" destination="BYZ-38-t0r" id="8kG-IX-ojQ"/>
                                         </connections>
@@ -56,6 +56,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="goBackButtonItem" destination="vIY-M7-cgh" id="VHU-yW-4OI"/>
+                        <outlet property="goForwardButtonItem" destination="AN2-PI-tNf" id="ALL-vL-loP"/>
                         <outlet property="wkContainer" destination="kGA-lg-5nk" id="jFi-Q4-wSO"/>
                     </connections>
                 </viewController>
