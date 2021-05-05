@@ -68,8 +68,16 @@
     [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [_webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
     
-    NSArray *urls = @[@"https://xw.qq.com", @"https://m.hupu.com", @"https://www.taobao.com", @"https://www.bilibili.com/", @"https://www.baidu.com", @"https://www.github.com"];
-    NSDictionary *params = @{@"urls": urls, @"currentPage": @(-2)};
+    NSArray *urls = @[
+        @"https://xw.qq.com",
+        @"https://m.hupu.com",
+        @"https://www.taobao.com",
+        @"https://www.bilibili.com/",
+        @"https://www.baidu.com",
+        @"https://www.github.com"
+    ];
+    
+    NSDictionary *params = @{@"urls": urls, @"currentPage": @(-1)};
     
     NSString *paramsStr = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:params options:0 error:nil] encoding:NSUTF8StringEncoding];
     NSURLComponents *urlComponents = [[NSURLComponents alloc] init];
