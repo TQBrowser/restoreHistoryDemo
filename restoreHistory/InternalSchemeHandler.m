@@ -17,11 +17,8 @@
     NSData *data = nil;
     NSURL *rURL = nil;
     if ([url.path isEqualToString:@"/restore"]) {
-//        rURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:5555/restore?%@", url.query]];
-//        NSString *query = url.query;
         NSString *htmlFilePath = [[NSBundle mainBundle] pathForResource:@"RestoreSession" ofType:@"html"];
         NSString *html = [[NSString stringWithContentsOfFile:htmlFilePath encoding:NSUTF8StringEncoding error:nil] stringByReplacingOccurrencesOfString:@"{{$pageUrl}}" withString:url.absoluteString];
-        
         data = [html dataUsingEncoding:NSUTF8StringEncoding];
     } else if ([url.path isEqualToString:@"/history"]) {
         NSString *query = url.query;
