@@ -35,7 +35,13 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem springLoaded="YES" systemItem="flexibleSpace" id="KfL-bZ-Qih"/>
-                                    <barButtonItem title="button" id="tHJ-N8-cEV">
+                                    <barButtonItem title="x" id="eVD-MM-3Je">
+                                        <connections>
+                                            <action selector="cancel:" destination="BYZ-38-t0r" id="44k-6h-YGK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem springLoaded="YES" systemItem="flexibleSpace" id="NBL-BM-z7G"/>
+                                    <barButtonItem title="showHistory" id="tHJ-N8-cEV">
                                         <connections>
                                             <action selector="buttonAction:" destination="BYZ-38-t0r" id="kVj-9w-yJR"/>
                                         </connections>
@@ -58,6 +64,7 @@
                     <connections>
                         <outlet property="goBackButtonItem" destination="vIY-M7-cgh" id="VHU-yW-4OI"/>
                         <outlet property="goForwardButtonItem" destination="AN2-PI-tNf" id="ALL-vL-loP"/>
+                        <outlet property="toolBar" destination="uVa-10-j6A" id="gzC-UA-xcX"/>
                         <outlet property="wkContainer" destination="kGA-lg-5nk" id="jFi-Q4-wSO"/>
                     </connections>
                 </viewController>

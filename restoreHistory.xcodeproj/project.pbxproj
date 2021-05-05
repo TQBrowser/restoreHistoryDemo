@@ -15,12 +15,10 @@
 		A9784EBF264112B300664F04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9784EBD264112B300664F04 /* LaunchScreen.storyboard */; };
 		A9784EC2264112B300664F04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9784EC1264112B300664F04 /* main.m */; };
 		A9784EE026414F5E00664F04 /* RestoreSession.html in Resources */ = {isa = PBXBuildFile; fileRef = A9784EDF26414F5E00664F04 /* RestoreSession.html */; };
-		E7AB063651A30AC1ACEF06B5 /* Pods_restoreHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BAEE3EE078E8BD2EB82B38 /* Pods_restoreHistory.framework */; };
+		A9FBD437264240860007BCAC /* InternalSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FBD436264240860007BCAC /* InternalSchemeHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19BAEE3EE078E8BD2EB82B38 /* Pods_restoreHistory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_restoreHistory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2726DC1454317B7BDA11057E /* Pods-restoreHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restoreHistory.release.xcconfig"; path = "Target Support Files/Pods-restoreHistory/Pods-restoreHistory.release.xcconfig"; sourceTree = "<group>"; };
 		A9784EAC264112B100664F04 /* restoreHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = restoreHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9784EAF264112B100664F04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9784EB0264112B100664F04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,7 +32,8 @@
 		A9784EC0264112B300664F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9784EC1264112B300664F04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9784EDF26414F5E00664F04 /* RestoreSession.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = RestoreSession.html; sourceTree = "<group>"; };
-		DF965192FC71857661AE0BDD /* Pods-restoreHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restoreHistory.debug.xcconfig"; path = "Target Support Files/Pods-restoreHistory/Pods-restoreHistory.debug.xcconfig"; sourceTree = "<group>"; };
+		A9FBD435264240860007BCAC /* InternalSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalSchemeHandler.h; sourceTree = "<group>"; };
+		A9FBD436264240860007BCAC /* InternalSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternalSchemeHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7AB063651A30AC1ACEF06B5 /* Pods_restoreHistory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,19 +50,8 @@
 		13840945F4AD13222A33A302 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19BAEE3EE078E8BD2EB82B38 /* Pods_restoreHistory.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7E678D35D28FF92A99E53B19 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DF965192FC71857661AE0BDD /* Pods-restoreHistory.debug.xcconfig */,
-				2726DC1454317B7BDA11057E /* Pods-restoreHistory.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		A9784EA3264112B100664F04 = {
@@ -72,7 +59,6 @@
 			children = (
 				A9784EAE264112B100664F04 /* restoreHistory */,
 				A9784EAD264112B100664F04 /* Products */,
-				7E678D35D28FF92A99E53B19 /* Pods */,
 				13840945F4AD13222A33A302 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +80,8 @@
 				A9784EB3264112B100664F04 /* SceneDelegate.m */,
 				A9784EB5264112B100664F04 /* ViewController.h */,
 				A9784EB6264112B100664F04 /* ViewController.m */,
+				A9FBD435264240860007BCAC /* InternalSchemeHandler.h */,
+				A9FBD436264240860007BCAC /* InternalSchemeHandler.m */,
 				A9784EDF26414F5E00664F04 /* RestoreSession.html */,
 				A9784EB8264112B100664F04 /* Main.storyboard */,
 				A9784EBB264112B300664F04 /* Assets.xcassets */,
@@ -111,11 +99,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9784EC5264112B300664F04 /* Build configuration list for PBXNativeTarget "restoreHistory" */;
 			buildPhases = (
-				7492DE5F949A965985DD0884 /* [CP] Check Pods Manifest.lock */,
 				A9784EA8264112B100664F04 /* Sources */,
 				A9784EA9264112B100664F04 /* Frameworks */,
 				A9784EAA264112B100664F04 /* Resources */,
-				DFAB04E278EC576D64753F7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,54 +157,13 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		7492DE5F949A965985DD0884 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-restoreHistory-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DFAB04E278EC576D64753F7E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-restoreHistory/Pods-restoreHistory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-restoreHistory/Pods-restoreHistory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-restoreHistory/Pods-restoreHistory-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		A9784EA8264112B100664F04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A9784EB7264112B100664F04 /* ViewController.m in Sources */,
+				A9FBD437264240860007BCAC /* InternalSchemeHandler.m in Sources */,
 				A9784EB1264112B100664F04 /* AppDelegate.m in Sources */,
 				A9784EC2264112B300664F04 /* main.m in Sources */,
 				A9784EB4264112B100664F04 /* SceneDelegate.m in Sources */,
@@ -361,7 +306,6 @@
 		};
 		A9784EC6264112B300664F04 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF965192FC71857661AE0BDD /* Pods-restoreHistory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -380,7 +324,6 @@
 		};
 		A9784EC7264112B300664F04 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2726DC1454317B7BDA11057E /* Pods-restoreHistory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
